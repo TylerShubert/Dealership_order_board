@@ -37,21 +37,26 @@ st.dataframe(AgGrid(df))
 st.write(filteredDF)
 #infer_datetime_format=False
 
-CSV = pd.read_csv('2023WRF.CSV',na_filter= False)
+CSV = pd.read_csv('2023RC.CSV',na_filter= False)
+
+#CSV = pd.read_csv('2023WRF.CSV',na_filter= False)
 
 filCSV = CSV.dropna(axis=1, how='all')
 
-st.dataframe(filCSV.fillna(''))
+#st.dataframe(filCSV.fillna(''))
 
 
-if st.button("UnfilteredCSV"):
-    st.write(CSV)
+#if st.button("UnfilteredCSV"):
+    #st.write(CSV)
 
-if st.button("filterCSV"):
-    st.write(filCSV)
+#if st.button("filterCSV"):
+    #st.write(filCSV)
 
 if st.button('DF2'):
     st.dataframe(filCSV.fillna(''))
+
+if st.button('DF3'):
+    st.table(filCSV)
 
 KAWI_JET_SKI = pd.read_csv(
     Path("Jet_ski_samp.csv"),
